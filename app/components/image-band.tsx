@@ -13,9 +13,9 @@ export function ImageBand() {
     () => {
       gsap.fromTo(
         imageRef.current,
-        { yPercent: -8 },
+        { yPercent: -40 },
         {
-          yPercent: 8,
+          yPercent: 40,
           ease: "none",
           scrollTrigger: {
             trigger: container.current,

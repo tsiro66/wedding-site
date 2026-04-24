@@ -11,7 +11,7 @@ export function Hero() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      const tl = gsap.timeline({ paused: true });
 
       tl.fromTo(
         imageWrap.current,
@@ -26,10 +26,10 @@ export function Hero() {
         .from(
           ".hero-line",
           {
-            y: 120,
+            x: -80,
             opacity: 0,
-            stagger: 0.12,
-            duration: 1.4,
+            stagger: 0.15,
+            duration: 1.6,
             ease: "power3.out",
           },
           0.8,
@@ -37,12 +37,16 @@ export function Hero() {
         .from(
           ".hero-sub",
           {
-            y: 30,
+            y: 20,
             opacity: 0,
             duration: 1,
           },
-          1.3,
+          1.4,
         );
+
+      // Sync with preloader — play after it exits
+      const play = () => tl.play();
+      window.addEventListener("preloader-complete", play, { once: true });
 
       // Parallax on scroll
       gsap.to(imageWrap.current, {
@@ -75,44 +79,45 @@ export function Hero() {
       ref={container}
       className="relative h-screen w-full overflow-hidden"
     >
+      {/* Image — no overlay, breathes fully */}
       <div ref={imageWrap} className="absolute inset-0">
         <Image
-          src="/cassio-jardim-Efd5oh-nQWI-unsplash.jpg"
+          src="/img-hero.jpg"
           alt="Bridal gown detail"
           fill
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/25" />
       </div>
 
-      <div className="hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
+      {/* Text — left-aligned, blend-difference reacts to image */}
+      <div className="hero-content pointer-events-none relative z-10 flex h-full flex-col justify-end px-6 pb-28 sm:justify-center sm:pb-0 sm:pl-[8vw]">
         <div className="overflow-hidden">
-          <p className="hero-line mb-8 text-[10px] font-light uppercase tracking-[0.4em] sm:text-xs">
+          <p className="hero-line mb-6 text-[10px] font-light uppercase tracking-[0.4em] text-white mix-blend-difference sm:text-xs">
             Bespoke Bridal Couture
           </p>
         </div>
-        <h1 className="font-serif font-light leading-[0.9]">
+        <h1 className="font-serif font-light leading-[0.85] text-white mix-blend-difference">
           <div className="overflow-hidden">
-            <span className="hero-line block text-[clamp(3.5rem,12vw,10rem)] tracking-wide">
+            <span className="hero-line block text-[clamp(4rem,14vw,12rem)] tracking-wide">
               I Am
             </span>
           </div>
           <div className="overflow-hidden">
-            <span className="hero-line block text-[clamp(3.5rem,12vw,10rem)] italic tracking-wide">
+            <span className="hero-line block text-[clamp(4rem,14vw,12rem)] italic tracking-wide">
               Silk
             </span>
           </div>
         </h1>
-        <div className="mt-10 overflow-hidden">
-          <p className="hero-sub text-[10px] font-light uppercase tracking-[0.35em] opacity-80 sm:text-xs">
+        <div className="mt-8 overflow-hidden">
+          <p className="hero-sub text-[10px] font-light uppercase tracking-[0.35em] text-white mix-blend-difference sm:text-xs">
             London &middot; Paris &middot; Milan
           </p>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
-        <div className="h-12 w-px animate-pulse bg-white/40" />
+        <div className="h-12 w-px animate-pulse bg-white/40 mix-blend-difference" />
       </div>
     </section>
   );

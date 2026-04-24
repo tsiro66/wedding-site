@@ -1,3 +1,4 @@
+import { Preloader } from "./components/preloader";
 import { Nav } from "./components/nav";
 import { Hero } from "./components/hero";
 import { Philosophy } from "./components/philosophy";
@@ -8,6 +9,7 @@ import { Footer } from "./components/footer";
 export default function Home() {
   return (
     <>
+      <Preloader />
       <Nav />
       <Hero />
       <Philosophy />
