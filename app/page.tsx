@@ -4,6 +4,7 @@ import { Hero } from "./components/hero";
 import { Philosophy } from "./components/philosophy";
 import { ImageBand } from "./components/image-band";
 import { Atelier } from "./components/atelier";
+import { Gallery } from "./components/gallery";
 import { Footer } from "./components/footer";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Philosophy />
       <ImageBand />
       <Atelier />
+      <Gallery />
       <Footer />
     </>
   );

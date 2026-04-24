@@ -28,7 +28,7 @@ export function Footer() {
     <footer
       ref={container}
       id="contact"
-      className="bg-stone-900 px-6 py-40 text-white sm:py-56"
+      className="relative z-10 bg-stone-900 px-6 py-40 text-white sm:py-56"
     >
       <div className="mx-auto max-w-4xl text-center">
         <p className="footer-reveal mb-8 text-xs uppercase tracking-[0.4em] text-white/40">
