@@ -148,7 +148,7 @@ export default function Preloader({ ready, onComplete }: PreloaderProps) {
         {/* Brand letters */}
         <div
           ref={brandRef}
-          className="flex items-baseline gap-[0.04em] font-[family-name:var(--font-cormorant)] text-[clamp(3.5rem,12vw,8rem)] font-light tracking-tight text-stone-800 overflow-hidden"
+          className="flex items-baseline gap-[0.04em] font-(family-name:--font-cormorant) text-[clamp(3.5rem,12vw,8rem)] font-light tracking-tight text-stone-800 overflow-hidden"
           style={{ perspective: "600px" }}
         >
           {brandChars.map(({ ch, italic }, i) => (
@@ -166,7 +166,7 @@ export default function Preloader({ ready, onComplete }: PreloaderProps) {
       {/* Counter — bottom right */}
       <span
         ref={counterRef}
-        className="absolute bottom-8 right-8 text-[clamp(2rem,5vw,3.5rem)] tracking-[0.1em] text-stone-900 font-light tabular-nums opacity-0"
+        className="absolute bottom-0 right-0 text-[clamp(6rem,18vw,12rem)] leading-none text-stone-900 opacity-0 font-(family-name:--font-cormorant)"
       >
         {String(displayCount).padStart(3, "0")}
       </span>
