@@ -1,23 +1,11 @@
-import { Preloader } from "./components/preloader";
-import { Nav } from "./components/nav";
-import { Hero } from "./components/hero";
-import { Philosophy } from "./components/philosophy";
-import { ImageBand } from "./components/image-band";
-import { Atelier } from "./components/atelier";
-import { Gallery } from "./components/gallery";
-import { Footer } from "./components/footer";
+import HeroSection from "./components/HeroSection";
+import NavButton from "./components/NavButton";
 
 export default function Home() {
   return (
-    <>
-      <Preloader />
-      <Nav />
-      <Hero />
-      <Philosophy />
-      <ImageBand />
-      <Atelier />
-      <Gallery />
-      <Footer />
-    </>
+    <div className="flex flex-col">
+      <NavButton />
+      <HeroSection />
+    </div>
   );
 }

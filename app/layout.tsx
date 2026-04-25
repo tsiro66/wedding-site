@@ -11,7 +11,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "I Am Silk — Bespoke Bridal Couture",
+  title: "I Am Silk",
   description: "Handcrafted bridal gowns designed to move with you.",
 };
 
