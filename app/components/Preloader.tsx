@@ -67,13 +67,6 @@ export default function Preloader({ ready, onComplete }: PreloaderProps) {
         ease: "power3.out",
       }
     )
-      // Counter fade in
-      .fromTo(
-        counterRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.4 },
-        0.5
-      );
   }, []);
 
   /* ── Exit animation (when counter hits 100) ── */
@@ -166,9 +159,9 @@ export default function Preloader({ ready, onComplete }: PreloaderProps) {
       {/* Counter — bottom right */}
       <span
         ref={counterRef}
-        className="absolute bottom-0 right-0 text-[clamp(6rem,18vw,12rem)] leading-none text-stone-900 opacity-0 font-(family-name:--font-cormorant)"
+        className="absolute bottom-0 right-0 text-[clamp(6rem,18vw,12rem)] leading-none text-stone-900 font-(family-name:--font-cormorant)"
       >
-        {String(displayCount).padStart(3, "0")}
+        {String(displayCount).padStart(2, "0")}
       </span>
 
       {/* Keyframes injected inline */}
