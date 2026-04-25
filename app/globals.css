@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: var(--color-cream);
+  background-color: black;
   color: #1c1917;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -16,4 +16,18 @@ body {
 ::selection {
   background-color: #a39382;
   color: white;
+}
+
+/* ── Footer marquee ── */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 60s linear infinite;
 }

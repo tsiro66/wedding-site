@@ -76,7 +76,7 @@ export default function NavButton() {
     <div ref={containerRef}>
       {/* Fullscreen overlay */}
       <div
-        className="menu-overlay fixed inset-0 z-40 bg-[#1c1917] flex"
+        className="menu-overlay fixed inset-0 z-40 bg-black flex"
         style={{ clipPath: "inset(0 100% 0 0)" }}
       >
         <div className="flex flex-col justify-center px-12 md:px-24 lg:px-32 w-full">
@@ -93,10 +93,10 @@ export default function NavButton() {
               </div>
             ))}
           </nav>
-
+          {/* add icons */}
           <div className="menu-secondary mt-16 flex gap-12 text-sm tracking-widest uppercase opacity-0">
-            <span className="text-white/40 hover:text-white transition-colors duration-300 cursor-pointer">Instagram</span>
-            <span className="text-white/40 hover:text-white transition-colors duration-300 cursor-pointer">Facebook</span>
+            <span className="text-white/40 hover:text-white transition-colors duration-300 cursor-pointer"></span>
+            <span className="text-white/40 hover:text-white transition-colors duration-300 cursor-pointer"></span>
           </div>
         </div>
       </div>
